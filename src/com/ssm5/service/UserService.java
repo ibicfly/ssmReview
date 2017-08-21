@@ -13,7 +13,10 @@ public class UserService {
 	public User findUserByUserName(String username)
 	{
 		User user=null;
-		user=userDao.findUserByUserName(username);
+		if(username!=null)
+		{
+			user=userDao.findUserByUserName(username);
+		}
 		return user;
 	}
 	public boolean validatePassword(String username,String password)
@@ -26,5 +29,13 @@ public class UserService {
 		{
 			return false;
 		}
+	}
+	public User addUser(User user)
+	{
+		if(user!=null)
+		{
+			userDao.addUser(user);
+		}
+		return user;
 	}
 }

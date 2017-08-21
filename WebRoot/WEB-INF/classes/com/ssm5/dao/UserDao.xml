@@ -3,11 +3,12 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssm5.dao.UserDao">
-	<resultMap type="User" id="userMap">
+	<resultMap id="userMap" type="User" >
 		<id property="uId" column="uId"/>
 		<result property="username" column="username"/>
 		<result property="password" column="password"/>
 	</resultMap>
+	
 	<select id="findUserByUserName" parameterType="String" resultMap="userMap"
 	>
 	SELECT uId,username,password
@@ -20,4 +21,32 @@
 	from t_user
 	where username=#{username}
 	</select>
+	<select id="findUserByUserId" parameterType="int" resultMap="userMap">
+	SELECT uId,username,password
+	from t_user
+	where uId=#{uId}
+	</select>
+	
+	<insert id="addUser" parameterType="User" keyProperty="userId">
+	INSERT INTO 
+	t_user
+	<!-- 这里采用了动态判断的方式，针对非空的字段进行插入 -->
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+        </trim>
+    <trim prefix="values(" suffix=")" suffixOverrides=",">
+           <if test="username != null">
+               #{username, jdbcType=VARCHAR},
+           </if>
+           <if test="password != null">
+               #{password, jdbcType=VARCHAR},
+           </if>
+    </trim>
+	</insert>
+	
 </mapper>

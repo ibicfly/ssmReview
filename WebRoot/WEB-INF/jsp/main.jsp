@@ -9,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'login.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -20,12 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
   </head>
   <body>
-    This is my JSP page. <br>
-    <a href="index.do">loginJsp</a>
-    <form action="index.do" method="post">
-    	<input type="text" name="username" id="index_username">
-    	<input type="password" name="password" id="index_password"> 
-    	<input type="submit" value="提交给index.do">
-    </form>
+SpringMVC登陆成功
   </body>
 </html>

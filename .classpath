@@ -107,7 +107,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.springframework.js.resources-2.3.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ognl-2.6.9.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.26-bin.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-3.2.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-3.2.6.jar" sourcepath="C:/Users/Administrator/.m2/repository/org/mybatis/mybatis/3.2.6/mybatis-3.2.6-sources.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-spring-1.2.2.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
